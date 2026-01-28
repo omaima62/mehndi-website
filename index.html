@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Mehndi Art</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: linear-gradient(135deg, #fff0f5, #fdeff9);
+      margin: 0;
+      text-align: center;
+    }
+
+    /* 🔹 NAVBAR */
+    nav {
+      background: linear-gradient(to right, #8e44ad, #6c3483);
+      padding: 15px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    }
+
+    nav a {
+      color: white;
+      margin: 15px;
+      text-decoration: none;
+      font-size: 18px;
+      font-weight: bold;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    /* 🔹 HERO SECTION */
+    .hero {
+      padding: 100px 20px;
+      background: linear-gradient(120deg, #fdeff9, #fff0f5, #f8d7e8);
+    }
+
+    h1 {
+      color: #6c3483;
+      font-size: 42px;
+      margin-bottom: 15px;
+      text-shadow: 1px 1px 3px rgba(0,0,0,0.1);
+    }
+
+    p {
+      font-size: 18px;
+      color: #444;
+    }
+
+    .btn {
+      display: inline-block;
+      margin-top: 30px;
+      padding: 14px 30px;
+      background: linear-gradient(to right, #8e44ad, #6c3483);
+      color: white;
+      text-decoration: none;
+      border-radius: 30px;
+      font-size: 16px;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .btn:hover {
+      transform: scale(1.05);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+    }
+
+    /* 🔹 FEATURES SECTION */
+    .features {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin: 60px 0;
+    }
+
+    .box {
+      background: linear-gradient(to bottom, #ffffff, #fdeff9);
+      width: 250px;
+      margin: 15px;
+      padding: 30px 20px;
+      border-radius: 18px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .box:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 15px 30px rgba(0,0,0,0.25);
+    }
+
+    .box h3 {
+      color: #6c3483;
+      margin-bottom: 10px;
+    }
+
+    /* 🔹 FOOTER */
+    footer {
+      background: linear-gradient(to right, #6c3483, #8e44ad);
+      color: white;
+      padding: 20px;
+      margin-top: 50px;
+      font-size: 14px;
+    }
+
+    /* 🔹 RESPONSIVE */
+    @media (max-width: 600px) {
+      h1 {
+        font-size: 30px;
+      }
+      .features {
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="designs.html">Designs</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+
+  <!-- HERO -->
+  <div class="hero">
+    <h1>Welcome to Mehndi Art</h1>
+    <p>Beautiful Mehndi Designs for Every Occasion</p>
+    <a href="designs.html" class="btn">Explore Designs</a>
+  </div>
+
+  <!-- FEATURES -->
+  <div class="features">
+    <div class="box">
+      <h3>Bridal Mehndi</h3>
+      <p>Elegant and detailed bridal mehndi designs.</p>
+    </div>
+
+    <div class="box">
+      <h3>Arabic Mehndi</h3>
+      <p>Modern Arabic patterns with bold strokes.</p>
+    </div>
+
+    <div class="box">
+      <h3>Simple Mehndi</h3>
+      <p>Easy and beautiful designs for every day.</p>
+    </div>
+
+    <div class="box">
+      <h3>Festival Mehndi</h3>
+      <p>Stylish designs perfect for celebrations.</p>
+    </div>
+  </div>
+
+  <footer>
+    © 2026 Mehndi Art | All Rights Reserved
+  </footer>
+
+</body>
+</html>

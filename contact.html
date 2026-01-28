@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Contact Us</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #fff0f5;
+      text-align: center;
+      margin: 0;
+    }
+
+    nav {
+      background-color: #8e44ad;
+      padding: 15px;
+    }
+
+    nav a {
+      color: white;
+      margin: 15px;
+      text-decoration: none;
+      font-size: 18px;
+      font-weight: bold;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    h1 {
+      color: #6c3483;
+      margin: 40px 0 20px;
+      font-size: 36px;
+    }
+
+    .contact-box {
+      background: white;
+      width: 90%;
+      max-width: 450px;
+      margin: auto;
+      padding: 30px 20px;
+      border-radius: 18px;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+    }
+
+    input,
+    textarea {
+      width: 90%;
+      max-width: 350px;
+      padding: 12px;
+      margin: 10px 0;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+      font-size: 16px;
+    }
+
+    input:focus,
+    textarea:focus {
+      outline: none;
+      border-color: #8e44ad;
+      box-shadow: 0 0 6px rgba(142, 68, 173, 0.4);
+    }
+
+    textarea {
+      height: 120px;
+      resize: none;
+    }
+
+    button {
+      margin-top: 15px;
+      padding: 12px 35px;
+      background: linear-gradient(to right, #8e44ad, #6c3483);
+      color: white;
+      border: none;
+      border-radius: 25px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: transform 0.3s, background 0.3s;
+    }
+
+    button:hover {
+      background: linear-gradient(to right, #6c3483, #8e44ad);
+      transform: scale(1.05);
+    }
+
+    #status {
+      margin-top: 15px;
+      font-size: 16px;
+      color: green;
+    }
+  </style>
+</head>
+
+<body>
+
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="designs.html">Designs</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+
+  <h1>Contact Us</h1>
+
+  <div class="contact-box">
+    <form id="contactForm">
+      <input type="text" name="name" placeholder="Your Name" required>
+      <input type="email" name="email" placeholder="Your Email" required>
+      <textarea name="message" placeholder="Your Message" required></textarea>
+      <br>
+      <button type="submit">Send Message</button>
+    </form>
+
+    <p id="status"></p>
+  </div>
+
+  <script>
+    const form = document.getElementById("contactForm");
+    const status = document.getElementById("status");
+
+    form.addEventListener("submit", async (e) => {
+      e.preventDefault(); // Page reload roko
+
+      const formData = {
+        name: form.name.value,
+        email: form.email.value,
+        message: form.message.value,
+      };
+
+      try {
+        const res = await fetch("http://localhost:5000/contact", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(formData),
+        });
+
+        const text = await res.text();
+        status.style.color = res.ok ? "green" : "red";
+        status.innerText = text;
+
+        if (res.ok) form.reset(); // success pe form reset
+      } catch (err) {
+        status.style.color = "red";
+        status.innerText = "Error sending message. Check server!";
+      }
+    });
+  </script>
+
+</body>
+</html>
